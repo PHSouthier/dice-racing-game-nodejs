@@ -163,3 +163,12 @@ async function declareWinner(character1, character2) {
     console.log(`\n${character2.NOME} venceu a corrida! Parabéns! 🏆`);
   else console.log("A corrida terminou em empate");
 }
+
+(async function main() {
+  console.log(
+    `🏁🚨 Corrida entre ${player1.NOME} e ${player2.NOME} começando...\n`
+  );
+
+  await playRaceEngine(player1, player2);
+  await declareWinner(player1, player2);
+})();
