@@ -1,25 +1,75 @@
-<h1>🕹️ Regras & mecânicas:</h3>
+# 🏁 Dice Racing Game
 
-<b>Jogadores:</b>
+Simulador de corrida baseado em turnos desenvolvido em Node.js, onde dois personagens disputam uma corrida utilizando atributos e sorte.
 
-<input type="checkbox" id="jogadores-item" />
-<label for="jogadores-item">O Computador deve receber dois personagens para disputar a corrida em um objeto cada</label>
+---
 
-<b>Pistas:</b>
+## 🎮 Sobre o projeto
 
-<ul>
-  <li><input type="checkbox" id="pistas-1-item" /> <label for="pistas-1-item">Os personagens irão correr em uma pista aleatória de 5 rodadas</label></li>
-  <li><input type="checkbox" id="pistas-2-item" /> <label for="pistas-2-item">A cada rodada, será sorteado um bloco da pista que pode ser uma reta, curva ou confronto</label>
-    <ul>
-      <li><input type="checkbox" id="pistas-2-1-item" /> <label for="pistas-2-1-item">Caso o bloco da pista seja uma RETA, o jogador deve jogar um dado de 6 lados e somar o atributo VELOCIDADE, quem vencer ganha um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-2-item" /> <label for="pistas-2-2-item">Caso o bloco da pista seja uma CURVA, o jogador deve jogar um dado de 6 lados e somar o atributo MANOBRABILIDADE, quem vencer ganha um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-3-item" /> <label for="pistas-2-3-item">Caso o bloco da pista seja um CONFRONTO, o jogador deve jogar um dado de 6 lados e somar o atributo PODER, quem perder, perde um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-3-item" /> <label for="pistas-2-3-item">Nenhum jogador pode ter pontuação negativa (valores abaixo de 0)</label></li>
-    </ul>
-  </li>
-</ul>
+Neste jogo, dois personagens competem em uma corrida de 5 rodadas.  
+A cada rodada, um tipo de pista é sorteado e os jogadores disputam com base em seus atributos e na rolagem de dados 🎲.
 
-<b>Condição de vitória:</b>
+---
 
-<input type="checkbox" id="vitoria-item" />
-<label for="vitoria-item">Ao final, vence quem acumulou mais pontos</label>
+## 🧠 Mecânicas do jogo
+
+### 👥 Jogadores
+- O jogo recebe dois personagens
+- Cada personagem possui atributos:
+  - Velocidade
+  - Manobrabilidade
+  - Poder
+  - Pontuação
+
+---
+
+### 🛣️ Pistas
+
+A corrida possui **5 rodadas**, e em cada rodada é sorteado um tipo de pista:
+
+#### 🟦 Reta
+- Rola um dado de 6 lados 🎲
+- Soma com **VELOCIDADE**
+- Quem tiver o maior valor ganha **+1 ponto**
+
+#### 🟨 Curva
+- Rola um dado de 6 lados 🎲
+- Soma com **MANOBRABILIDADE**
+- Quem tiver o maior valor ganha **+1 ponto**
+
+#### 🟥 Confronto
+- Rola um dado de 6 lados 🎲
+- Soma com **PODER**
+- O resultado define quem vence o confronto
+
+---
+
+## 💥 Regras de Confronto
+
+Quando ocorre um confronto:
+
+### 🥊 Resultado
+- O jogador com maior poder vence
+- Em caso de empate, ninguém perde pontos
+
+### 🎯 Penalidades (aleatórias)
+Após o confronto, é sorteado:
+
+- 🐢 **Casco** → jogador perde **-1 ponto**
+- 💣 **Bomba** → jogador perde **-2 pontos**
+
+### ⚡ Bônus
+- O vencedor pode ganhar um **turbo (+1 ponto)** aleatoriamente
+
+---
+
+## 🚫 Regras adicionais
+
+- Nenhum jogador pode ter pontuação negativa (mínimo = 0)
+
+---
+
+## 🏆 Condição de vitória
+
+- Ao final das 5 rodadas
+- Vence quem tiver **mais pontos**
